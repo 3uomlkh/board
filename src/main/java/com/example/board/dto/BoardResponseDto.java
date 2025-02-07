@@ -1,5 +1,6 @@
 package com.example.board.dto;
 
+import com.example.board.entity.Board;
 import lombok.Getter;
 
 @Getter
@@ -13,5 +14,10 @@ public class BoardResponseDto {
         this.id = id;
         this.title = title;
         this.contents = contents;
+    }
+
+    // BoardResponseDto를 편하게 생성해주는 메서드
+    public static BoardResponseDto toDto(Board board) {
+        return new BoardResponseDto(board.getId(), board.getTitle(), board.getContents());
     }
 }
