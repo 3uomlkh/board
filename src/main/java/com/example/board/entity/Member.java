@@ -12,7 +12,7 @@ public class Member extends BaseEntity {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String userName;
+    private String username;
 
     @Column(nullable = false)
     private String password;
@@ -23,8 +23,8 @@ public class Member extends BaseEntity {
 
     }
 
-    public Member(String userName, String password, Integer age) {
-        this.userName = userName;
+    public Member(String username, String password, Integer age) {
+        this.username = username;
         this.password = password;
         this.age = age;
     }
