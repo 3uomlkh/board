@@ -41,4 +41,9 @@ public class BoardService {
         Member member = findBoard.getMember();
         return new BoardWithAgeResponseDto(findBoard.getTitle(), findBoard.getContents(), member.getAge());
     }
+
+    public void delete(Long id) {
+        Board findBoard = boardRepository.findByIdOrElseThrow(id);
+        boardRepository.delete(findBoard);
+    }
 }
